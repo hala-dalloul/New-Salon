@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="BeautyRed">0xffAD2629</color>
+    <color name="BeautyLightRed">0xFFEE4152</color>
+    <color name="BeautyPink">0xFFFCE8EA</color>
+    <color name="BeautyWhite">0xFFFFFFFF</color>
+    <color name="BeautyOfWhite">0xFFF3EDE0</color>
+    <color name="BeautyGray">0xFFF5F5F5</color>
+    <color name="BeautyDarkGray">0xFF2D2D2D</color>
+    <color name="BeautyGoldAccent">0xFFD4A853</color>
+</resources>
