@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.NewSalon.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/BeautyOfWhite</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/logo</item>
+        <item name="postSplashScreenTheme">@style/Theme.NewSalon</item>
+        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="31">1000</item>
+    </style>
+</resources>
