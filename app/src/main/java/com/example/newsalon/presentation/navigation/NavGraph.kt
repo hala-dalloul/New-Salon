@@ -1,15 +1,11 @@
 package com.example.newsalon.presentation.navigation
 
-import android.provider.ContactsContract
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.newsalon.presentation.screens.auth.LoginScreen
 import com.example.newsalon.presentation.screens.home.HomeScreen
-import com.example.newsalon.presentation.screens.profile.ProfileScreen
-
 
 @Composable
 fun NavGraph(navController: NavHostController) {
@@ -19,8 +15,9 @@ fun NavGraph(navController: NavHostController) {
         composable(Screen.LoginScreen.route){
             LoginScreen(
                 onSuccess = {
-                    println("System button clicked")
-                    navController.navigate(Screen.HomeScreen.route)
+                    navController.navigate(Screen.HomeScreen.route) {
+                        popUpTo(Screen.LoginScreen.route) { inclusive = true }
+                    }
                 }
             )
         }

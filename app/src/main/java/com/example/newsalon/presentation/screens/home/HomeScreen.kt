@@ -47,7 +47,7 @@ fun HomeScreen(navController: NavHostController) {
                 navController = navController,
                 onClickLis = { item ->
                     navController.navigate(item.rout) {
-                        popUpTo(navController.graph.startDestinationId) {
+                        popUpTo(Screen.HomeScreen.route) {
                             saveState = true
                         }
                         launchSingleTop = true
@@ -55,7 +55,6 @@ fun HomeScreen(navController: NavHostController) {
                     }
                 }
             )
-
         },
         topBar = { BeautyTopBar(true,isShowNotification = true)},
         containerColor = Color.White
