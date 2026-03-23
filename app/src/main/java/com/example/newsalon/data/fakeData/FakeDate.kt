@@ -38,7 +38,7 @@ object FakeData {
     val users = listOf(
         User(1,"5991234","User1","user1@email.com","https://picsum.photos/200?21"),
         User(2,"5992345","User2","user2@email.com","https://picsum.photos/200?22"),
-        User(3,"5993456", "User3", "user3@email.com", "https://picsum.photos/200?23"),
+        User(3,"5993456","User3", "user3@email.com", "https://picsum.photos/200?23"),
         User(4,"5994567","User4","user4@email.com","https://picsum.photos/200?24"),
         User(5,"5995678","User5","user5@email.com","https://picsum.photos/200?25"),
         User(6,"5996789","User6","user6@email.com","https://picsum.photos/200?26"),
@@ -51,27 +51,12 @@ object FakeData {
 
     val banners = listOf(
 
-        Banner(1,"https://picsum.photos/800?1"),
-        Banner(2,"https://picsum.photos/800?2"),
-        Banner(3,"https://picsum.photos/800?3"),
-        Banner(4,"https://picsum.photos/800?4"),
-        Banner(5,"https://picsum.photos/800?5"),
-        Banner(6,"https://picsum.photos/800?6"),
-        Banner(7,"https://picsum.photos/800?7"),
-        Banner(8,"https://picsum.photos/800?8"),
-        Banner(9,"https://picsum.photos/800?9"),
-        Banner(10,"https://picsum.photos/800?10"),
-        Banner(11, "https://picsum.photos/800?11"),
-        Banner(12,"https://picsum.photos/800?12"),
-        Banner(13,"https://picsum.photos/800?13"),
-        Banner(14,"https://picsum.photos/800?14"),
-        Banner(15,"https://picsum.photos/800?15"),
-        Banner(16,"https://picsum.photos/800?16"),
-        Banner(17,"https://picsum.photos/800?17"),
-        Banner(18,"https://picsum.photos/800?18"),
-        Banner(19,"https://picsum.photos/800?19"),
-        Banner(20,"https://picsum.photos/800?20")
-
+        Banner(1,(R.drawable.image_lipsticks_set).toString()),
+        Banner(2,(R.drawable.image_lipsticks_set).toString()),
+        Banner(3,(R.drawable.image_lipsticks_set).toString()),
+        Banner(4,(R.drawable.image_lipsticks_set).toString()),
+        Banner(5,(R.drawable.image_lipsticks_set).toString()),
+        Banner(6,(R.drawable.image_lipsticks_set).toString()),
     )
 
     val cartItems = listOf(

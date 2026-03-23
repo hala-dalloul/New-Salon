@@ -40,6 +40,10 @@ fun HomeScreen(navController: NavController) {
                 .padding(innerPadding)
                 .fillMaxSize()
         ) {
+            // banner
+            item{
+                FeatureBanner()
+            }
 
         }
     }
