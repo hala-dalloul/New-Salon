@@ -15,9 +15,12 @@ import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.newsalon.R
 import com.example.newsalon.presentation.navigation.BottomNavigationBar
@@ -30,10 +33,32 @@ import com.example.newsalon.presentation.navigation.NavItem
 import com.example.newsalon.presentation.navigation.Screen
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun HomeScreen(navController: NavHostController) {
     Scaffold(
+        bottomBar = {
+            BottomNavigationBar(
+                items =listOf(
+                    NavItem(Screen.HomeScreen.route, Icons.Default.Home, Screen.HomeScreen.route),
+                    NavItem(Screen.CategoryScreen.route, ImageVector.vectorResource(R.drawable.icon_category), Screen.CategoryScreen.route),
+                    NavItem(Screen.CartScreen.route, Icons.Default.ShoppingCart, Screen.CartScreen.route, budgeCount = 3),
+                    NavItem(Screen.FavoriteScreen.route, Icons.Default.FavoriteBorder, Screen.FavoriteScreen.route),
+                    NavItem(Screen.ProfileScreen.route, Icons.Default.Person, Screen.ProfileScreen.route),
+                ),
+                navController = navController,
+                onClickLis = { item ->
+                    navController.navigate(item.rout) {
+                        popUpTo(navController.graph.startDestinationId) {
+                            saveState = true
+                        }
+                        launchSingleTop = true
+                        restoreState = true
+                    }
+                }
+            )
 
+        },
         topBar = { BeautyTopBar(true,isShowNotification = true)},
+        containerColor = Color.White
     ) { innerPadding->
         LazyColumn(
             modifier = Modifier

@@ -12,7 +12,7 @@ class LoginViewModel: ViewModel() {
     private val _uiState = MutableStateFlow(LoginUiState())
     val uiState: StateFlow<LoginUiState> = _uiState.asStateFlow()
 
-    fun onPhoneChange(newPhone: String){
+    fun onPhoneChange(newPhone: String){        
         _uiState.update { current->
             current.copy(
                 phoneNumber = newPhone,

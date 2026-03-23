@@ -1,5 +1,6 @@
 package com.example.newsalon.presentation.navigation
 
+import android.provider.ContactsContract
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
@@ -7,11 +8,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.newsalon.presentation.screens.auth.LoginScreen
 import com.example.newsalon.presentation.screens.home.HomeScreen
+import com.example.newsalon.presentation.screens.profile.ProfileScreen
 
-sealed class Screen(val route: String){
-    object LoginScreen : Screen("login_screen")
-    object HomeScreen : Screen("home_screen")
-}
 
 @Composable
 fun NavGraph(navController: NavHostController) {
@@ -26,8 +24,21 @@ fun NavGraph(navController: NavHostController) {
                 }
             )
         }
+
         composable(Screen.HomeScreen.route){
-            HomeScreen()
+            HomeScreen(navController)
+        }
+        composable(Screen.ProfileScreen.route){
+            HomeScreen(navController)
+        }
+        composable(Screen.CategoryScreen.route){
+            HomeScreen(navController)
+        }
+        composable(Screen.CartScreen.route){
+            HomeScreen(navController)
+        }
+        composable(Screen.FavoriteScreen.route){
+            HomeScreen(navController)
         }
 
     }
