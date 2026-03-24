@@ -1,17 +1,11 @@
 package com.example.newsalon.presentation.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.newsalon.presentation.screens.auth.LoginScreen
 import com.example.newsalon.presentation.screens.home.HomeScreen
-
-sealed class Screen(val route: String){
-    object LoginScreen : Screen("login_screen")
-    object HomeScreen : Screen("home_screen")
-}
 
 @Composable
 fun NavGraph(navController: NavHostController) {
@@ -21,13 +15,27 @@ fun NavGraph(navController: NavHostController) {
         composable(Screen.LoginScreen.route){
             LoginScreen(
                 onSuccess = {
-                    println("System button clicked")
-                    navController.navigate(Screen.HomeScreen.route)
+                    navController.navigate(Screen.HomeScreen.route) {
+                        popUpTo(Screen.LoginScreen.route) { inclusive = true }
+                    }
                 }
             )
         }
+
         composable(Screen.HomeScreen.route){
-            HomeScreen()
+            HomeScreen(navController)
+        }
+        composable(Screen.ProfileScreen.route){
+            HomeScreen(navController)
+        }
+        composable(Screen.CategoryScreen.route){
+            HomeScreen(navController)
+        }
+        composable(Screen.CartScreen.route){
+            HomeScreen(navController)
+        }
+        composable(Screen.FavoriteScreen.route){
+            HomeScreen(navController)
         }
 
     }

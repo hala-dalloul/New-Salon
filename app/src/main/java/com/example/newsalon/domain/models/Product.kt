@@ -7,5 +7,6 @@ data class Product (
     val image: String,
     val description: String,
     val category: String,
-    val isLove: Boolean
+    var isLove: Boolean,
+    val discount: Double = 0.0,
     )
