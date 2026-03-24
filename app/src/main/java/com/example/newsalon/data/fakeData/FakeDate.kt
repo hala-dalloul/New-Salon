@@ -25,13 +25,13 @@ object FakeData {
 
     val products = listOf(
 
-        Product(1,"Hair Dryer",120.0,(R.drawable.image_hear_care).toString(),"Professional hair dryer","Hair",false),
-        Product(2,"Lipstick",30.0,(R.drawable.image_lipsticks_set).toString(),"Matte lipstick","Makeup",false),
-        Product(3,"Face Cream",45.0,(R.drawable.image_creem).toString(),"Skin care cream","Skin Care",false),
-        Product(4, "Perfume Rose", 90.0, (R.drawable.image_perfum).toString(), "Rose perfume", "Perfume", false),
-        Product(5,"Makeup Brush",20.0,(R.drawable.image_prush).toString(),"Soft brush","Tools",false),
-        Product(6,"Nail Polish",15.0,(R.drawable.image_nailes_color).toString(),"Red nail polish","Nails",false),
-        Product(7,"Body Lotion",40.0,(R.drawable.image_creem).toString(),"Body lotion","Body",false),
+        Product(1,"Hair Dryer",120.0,(R.drawable.image_hear_care).toString(),"Professional hair dryer","Hair",false,0.3),
+        Product(2,"Face Cream",45.0,(R.drawable.image_creem).toString(),"Skin care cream","Skin Care",false),
+        Product(3, "Perfume Rose", 90.0,(R.drawable.image_perfum).toString(), "Rose perfume", "Perfume", false, 0.2),
+        Product(4,"Makeup Brush",20.0,(R.drawable.image_prush).toString(),"Soft brush","Tools",false,0.4),
+        Product(5,"Nail Polish",15.0,(R.drawable.image_nailes_color).toString(),"Red nail polish","Nails",false),
+        Product(6,"Body Lotion",40.0,(R.drawable.image_creem).toString(),"Body lotion","Body",false),
+        Product(7,"Lipstick",30.0,(R.drawable.image_lipsticks_set).toString(),"Matte lipstick","Makeup",false),
 
     )
 

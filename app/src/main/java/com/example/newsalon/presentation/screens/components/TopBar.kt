@@ -20,15 +20,20 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.newsalon.presentation.theme.BeautyDarkGray
 import com.example.newsalon.presentation.theme.BeautyGray
 import com.example.newsalon.presentation.theme.BeautyRed
+import org.w3c.dom.Text
 
 @Composable
 fun BeautyTopBar(
+    text: String = "",
+    textAlign: TextAlign = TextAlign.Start,
     isNotification: Boolean = false,
+    isShowSearch : Boolean = false,
     isShowNotification : Boolean = false,
     current : Context = LocalContext.current
 ) {
@@ -36,7 +41,7 @@ fun BeautyTopBar(
         Modifier.fillMaxWidth().padding(vertical = 30.dp),
         verticalAlignment = Alignment.CenterVertically
     ){
-        Text("Good morning", modifier = Modifier.fillMaxWidth(0.8f).padding(start = 20.dp))
+        Text(text, modifier = Modifier.fillMaxWidth(0.8f).padding(start = 20.dp), textAlign = textAlign)
 
         BadgedBox(
             modifier = Modifier.size(36.dp),
@@ -62,12 +67,14 @@ fun BeautyTopBar(
             }
         }
 
-        IconButton(onClick = {
-            Toast.makeText(current, "Search", Toast.LENGTH_SHORT).show()
-        }, modifier = Modifier.size(36.dp)) {
-            Icon(
-                Icons.Default.Search, "Search",
-                tint = BeautyDarkGray, modifier = Modifier.size(30.dp))
+        if(isShowSearch){
+            IconButton(onClick = {
+                Toast.makeText(current, "Search", Toast.LENGTH_SHORT).show()
+            }, modifier = Modifier.size(36.dp)) {
+                Icon(
+                    Icons.Default.Search, "Search",
+                    tint = BeautyDarkGray, modifier = Modifier.size(30.dp))
+            }
         }
 
     }
@@ -75,5 +82,5 @@ fun BeautyTopBar(
 @Preview
 @Composable
 fun BeautyTopBarPreview() {
-    BeautyTopBar()
+    BeautyTopBar(text="good morning", isShowNotification = true, textAlign = TextAlign.Center)
 }
