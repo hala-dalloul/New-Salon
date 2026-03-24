@@ -4,6 +4,6 @@
         <item name="windowSplashScreenBackground">@color/BeautyOfWhite</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/logo</item>
         <item name="postSplashScreenTheme">@style/Theme.NewSalon</item>
-        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="31">1000</item>
+        <item name="android:windowSplashScreenAnimationDuration" tools:targetApi="31">3000</item>
     </style>
 </resources>
