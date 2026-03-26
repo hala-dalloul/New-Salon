@@ -101,10 +101,10 @@ fun ProductCard(product: Product) {
                     Text(categoryName, fontSize = 12.sp, fontWeight = FontWeight.W500)
                     Row(Modifier.fillMaxWidth()) {
                         if(product.discount == 0.0){
-                            Text("$${(product.price)}", fontSize = 15.sp, color = BeautyRed)
+                            Text("$${(product.price.toInt())}", fontSize = 15.sp, color = BeautyRed)
                         }else{
-                            Text("$${product.price}",fontSize = 12.sp, color = BeautyDarkGray, textDecoration = TextDecoration.LineThrough, fontWeight = FontWeight.W400)
-                            Text("  $${(product.price * product.discount)}",fontSize = 15.sp, color = BeautyRed, fontWeight = FontWeight.W600)
+                            Text("$${product.price.toInt()}",fontSize = 12.sp, color = BeautyDarkGray, textDecoration = TextDecoration.LineThrough, fontWeight = FontWeight.W400)
+                            Text("  $${(product.price * product.discount).toInt()}",fontSize = 15.sp, color = BeautyRed, fontWeight = FontWeight.W600)
                         }
                         Text("${product.count} sold",modifier = Modifier.fillMaxWidth().padding(end = 12.dp), fontSize = 10.sp, fontWeight = FontWeight.W400, textAlign = TextAlign.End)
                     }
