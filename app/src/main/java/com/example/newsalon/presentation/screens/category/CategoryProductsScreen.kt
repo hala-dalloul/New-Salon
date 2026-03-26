@@ -41,7 +41,7 @@ fun CategoryProductsScreen(navController: NavHostController, categoryId: String?
     BeautyAppTheme {
         Scaffold(
             modifier = Modifier.fillMaxSize(),
-            topBar = { BeautyTopBar(text = categoryName, textAlign = TextAlign.Center, isShowBackButton = true) },
+            topBar = { BeautyTopBar(text = categoryName, textAlign = TextAlign.Center, isShowBackButton = true, onBackClick = {navController.popBackStack()}) },
             snackbarHost = { SnackbarHost(hostState = snackBarHostState) }
         ) { innerPadding ->
             Column(
@@ -71,6 +71,6 @@ fun CategoryProductsScreen(navController: NavHostController, categoryId: String?
 @Composable
 fun PreviewCategory() {
     BeautyAppTheme {
-        CategoryProductsScreen(rememberNavController(), (FakeData.categories[1].id).toString())
+        CategoryProductsScreen(rememberNavController(), (FakeData.categories[4].id).toString())
     }
 }
