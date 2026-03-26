@@ -39,13 +39,13 @@ fun BeautyTopBar(
     current : Context = LocalContext.current
 ) {
     Row(
-        Modifier.fillMaxWidth().padding(vertical = 30.dp),
+        Modifier.fillMaxWidth().padding(top = 45.dp, bottom = 30.dp),
         verticalAlignment = Alignment.CenterVertically
     ){
         if(isShowBackButton){
             IconButton(onClick = {
                 onBackClick()
-            }, modifier = Modifier.size(36.dp)) {
+            }, modifier = Modifier.size(40.dp).padding(start = 15.dp)) {
                 Icon(
                     Icons.AutoMirrored.Filled.KeyboardArrowLeft, "Back",
                     tint = BeautyRed, modifier = Modifier.size(30.dp))
