@@ -9,4 +9,5 @@ data class Product (
     val category: String,
     var isLove: Boolean,
     val discount: Double = 0.0,
+    val count: Int = 0
     )
