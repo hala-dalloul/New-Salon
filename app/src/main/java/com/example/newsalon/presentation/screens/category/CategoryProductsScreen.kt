@@ -13,11 +13,14 @@ import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.newsalon.data.fakeData.FakeData
@@ -27,13 +30,22 @@ import com.example.newsalon.presentation.screens.components.ProductCard
 import com.example.newsalon.presentation.theme.BeautyAppTheme
 
 @Composable
-fun CategoryProductsScreen(navController: NavHostController, categoryId: String?) {
-    val snackBarHostState = remember { SnackbarHostState() }
-    val products = FakeData.products.filter { it.category == categoryId }
-    val categoryName = FakeData.categories.find { it.id.toString() == categoryId }?.name ?: ""
+fun CategoryProductsScreen(navController: NavHostController, categoryId: String?, viewModel: CategoryViewModel = viewModel()) {
 
-    LaunchedEffect(products) {
-        if (products.isEmpty()) {
+    val uiState by viewModel.uiState.collectAsState()
+
+    val snackBarHostState = remember { SnackbarHostState() }
+
+    LaunchedEffect(categoryId) {
+        categoryId?.let{
+            viewModel.loadProducts(it)
+        }
+    }
+
+    val categoryName = FakeData.categories.find { it.id == categoryId }?.name ?: ""
+
+    LaunchedEffect(uiState.products, uiState.isLoad) {
+        if (uiState.products.isEmpty() && !uiState.isLoad && categoryId != null) {
             snackBarHostState.showSnackbar("No products in this category")
         }
     }
@@ -58,7 +70,7 @@ fun CategoryProductsScreen(navController: NavHostController, categoryId: String?
                         .fillMaxWidth()
                         .weight(1f)
                 ) {
-                    items(products) { product ->
+                    items(uiState.products) { product ->
                         ProductCard(product)
                     }
                 }

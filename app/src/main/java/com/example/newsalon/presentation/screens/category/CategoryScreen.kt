@@ -15,12 +15,15 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
@@ -36,16 +39,25 @@ import com.example.newsalon.presentation.theme.BeautyAppTheme
 
 
 @Composable
-fun CategoryScreen(navController: NavHostController) {
+fun CategoryScreen(navController: NavHostController, viewModel: CategoryViewModel = viewModel()) {
+    val uiState by viewModel.uiState.collectAsState()
     BeautyAppTheme {
         Scaffold(
             modifier = Modifier.fillMaxSize(),
-            topBar = { BeautyTopBar(text = "Category", textAlign = TextAlign.Center, isShowSearch = true) },
+            topBar = {
+                BeautyTopBar(
+                    text = "Category",
+                    textAlign = TextAlign.Center,
+                    isShowSearch = true
+                )
+            },
             bottomBar = {
                 BottomNavFun(navController)
             }
-        ) {innerPadding->
-            Column(Modifier.fillMaxSize().padding(innerPadding)) {
+        ) { innerPadding ->
+            Column(Modifier
+                .fillMaxSize()
+                .padding(innerPadding)) {
                 val state = rememberLazyGridState(1)
                 LazyVerticalGrid(
                     columns = GridCells.Fixed(2),
@@ -55,8 +67,8 @@ fun CategoryScreen(navController: NavHostController) {
                         .fillMaxWidth()
                         .height(576.dp)
                 ) {
-                    val list = FakeData.categories
-                    items(count = list.size){item ->
+                    val list = uiState.categories
+                    items(count = list.size) { item ->
                         CategoryCard(list[item], navController = navController)
                     }
                 }
@@ -68,7 +80,7 @@ fun CategoryScreen(navController: NavHostController) {
 
 @Preview
 @Composable
-fun PreviewCategoryScreen(){
+fun PreviewCategoryScreen() {
     BeautyAppTheme {
         CategoryScreen(rememberNavController())
     }

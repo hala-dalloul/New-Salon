@@ -1,7 +1,7 @@
 package com.example.newsalon.domain.models
 
 data class Category (
-    val id: Int,
+    val id: String,
     val name: String,
     val image: String
 )

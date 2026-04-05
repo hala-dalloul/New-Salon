@@ -10,14 +10,14 @@ import com.example.newsalon.domain.models.User
 object FakeData {
     val categories = listOf(
 
-        Category(1,"Skin creams",(R.drawable.image_creem).toString()),
-        Category(2,"Nails Product",(R.drawable.image_nailes_color).toString()),
-        Category(3,"Perfume",(R.drawable.image_perfum).toString()),
-        Category(4,"Makeup",(R.drawable.image_makeup).toString()),
-        Category(5,"Hair care tools",(R.drawable.image_hear_care).toString()),
-        Category(6,"Body tools",(R.drawable.image_body_care).toString()),
-        Category(7,"Prushes",(R.drawable.image_prush2).toString()),
-        Category(8,"Hair care Product",(R.drawable.shampo).toString()),
+        Category("1","Skin creams",(R.drawable.image_creem).toString()),
+        Category("2","Nails Product",(R.drawable.image_nailes_color).toString()),
+        Category("3","Perfume",(R.drawable.image_perfum).toString()),
+        Category("4","Makeup",(R.drawable.image_makeup).toString()),
+        Category("5","Hair care tools",(R.drawable.image_hear_care).toString()),
+        Category("6","Body tools",(R.drawable.image_body_care).toString()),
+        Category("7","Prushes",(R.drawable.image_prush2).toString()),
+        Category("8","Hair care Product",(R.drawable.shampo).toString()),
 
     )
 
