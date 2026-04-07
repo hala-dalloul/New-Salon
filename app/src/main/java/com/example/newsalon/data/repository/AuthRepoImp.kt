@@ -4,6 +4,15 @@ import com.example.newsalon.domain.repository.AuthRepo
 import kotlinx.coroutines.delay
 
 class AuthRepoImp : AuthRepo {
+
+    private var loggedInPhone: String? = null
+
+    override fun setCurrentUser(phone: String) {
+        loggedInPhone = phone
+    }
+
+    override fun getCurrentUserPhone(): String? = loggedInPhone
+
     override suspend fun loginWithPhone(
         phone: String,
         password: String
