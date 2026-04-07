@@ -5,7 +5,9 @@ import kotlinx.coroutines.delay
 
 class AuthRepoImp : AuthRepo {
 
-    private var loggedInPhone: String? = null
+    companion object{
+        private var loggedInPhone: String? = null
+    }
 
     override fun setCurrentUser(phone: String) {
         loggedInPhone = phone
