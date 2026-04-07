@@ -5,6 +5,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.newsalon.presentation.screens.auth.LoginScreen
+import com.example.newsalon.presentation.screens.category.CategoryScreen
+import com.example.newsalon.presentation.screens.cart.CartScreen
+import com.example.newsalon.presentation.screens.category.CategoryProductsScreen
 import com.example.newsalon.presentation.screens.home.HomeScreen
 
 @Composable
@@ -29,10 +32,16 @@ fun NavGraph(navController: NavHostController) {
             HomeScreen(navController)
         }
         composable(Screen.CategoryScreen.route){
-            HomeScreen(navController)
+            CategoryScreen(navController)
         }
+
+        composable("category_details_screen/{categoryId}") { backStackEntry ->
+            val categoryId = backStackEntry.arguments?.getString("categoryId")
+            CategoryProductsScreen(navController, categoryId)
+        }
+
         composable(Screen.CartScreen.route){
-            HomeScreen(navController)
+            CartScreen(navController)
         }
         composable(Screen.FavoriteScreen.route){
             HomeScreen(navController)

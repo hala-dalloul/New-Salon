@@ -2,13 +2,12 @@ package com.example.newsalon.presentation.screens.components
 
 import android.content.Context
 import android.widget.Toast
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Badge
@@ -20,13 +19,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.newsalon.presentation.theme.BeautyDarkGray
-import com.example.newsalon.presentation.theme.BeautyGray
 import com.example.newsalon.presentation.theme.BeautyRed
-import org.w3c.dom.Text
 
 @Composable
 fun BeautyTopBar(
@@ -34,14 +33,25 @@ fun BeautyTopBar(
     textAlign: TextAlign = TextAlign.Start,
     isNotification: Boolean = false,
     isShowSearch : Boolean = false,
+    isShowBackButton : Boolean = false,
+    onBackClick: () -> Unit = {},
     isShowNotification : Boolean = false,
     current : Context = LocalContext.current
 ) {
     Row(
-        Modifier.fillMaxWidth().padding(vertical = 30.dp),
+        Modifier.fillMaxWidth().padding(top = 45.dp, bottom = 30.dp),
         verticalAlignment = Alignment.CenterVertically
     ){
-        Text(text, modifier = Modifier.fillMaxWidth(0.8f).padding(start = 20.dp), textAlign = textAlign)
+        if(isShowBackButton){
+            IconButton(onClick = {
+                onBackClick()
+            }, modifier = Modifier.size(40.dp).padding(start = 15.dp)) {
+                Icon(
+                    Icons.AutoMirrored.Filled.KeyboardArrowLeft, "Back",
+                    tint = BeautyRed, modifier = Modifier.size(30.dp))
+            }
+        }
+        Text(text, modifier = Modifier.fillMaxWidth(0.8f).padding(start = 20.dp), textAlign = textAlign, fontSize = 18.sp, fontWeight = FontWeight.W700)
 
         BadgedBox(
             modifier = Modifier.size(36.dp),

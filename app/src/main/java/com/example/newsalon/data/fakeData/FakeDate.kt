@@ -10,28 +10,26 @@ import com.example.newsalon.domain.models.User
 object FakeData {
     val categories = listOf(
 
-        Category(1,"Hair",(R.drawable.image_hear_care).toString()),
-        Category(2,"Makeup",(R.drawable.image_makeup).toString()),
-        Category(3,"Skin Care",(R.drawable.image_creem).toString()),
-        Category(4,"Perfume",(R.drawable.image_perfum).toString()),
-        Category(5,"Tools",(R.drawable.image_spong).toString()),
-        Category(6,"Creams",(R.drawable.image_creem).toString()),
-        Category(7,"Nails",(R.drawable.image_nailes_color).toString()),
-        Category(10,"Body",(R.drawable.image_body_care).toString()),
-        Category(13,"Lip Care",(R.drawable.image_lipsticks_set).toString()),
-        Category(14,"Brushes",(R.drawable.image_prush).toString()),
+        Category("1","Skin creams",(R.drawable.image_creem).toString()),
+        Category("2","Nails Product",(R.drawable.image_nailes_color).toString()),
+        Category("3","Perfume",(R.drawable.image_perfum).toString()),
+        Category("4","Makeup",(R.drawable.image_makeup).toString()),
+        Category("5","Hair care tools",(R.drawable.image_hear_care).toString()),
+        Category("6","Body tools",(R.drawable.image_body_care).toString()),
+        Category("7","Prushes",(R.drawable.image_prush2).toString()),
+        Category("8","Hair care Product",(R.drawable.shampo).toString()),
 
     )
 
     val products = listOf(
 
-        Product(1,"Hair Dryer",120.0,(R.drawable.image_hear_care).toString(),"Professional hair dryer","Hair",false,0.3),
-        Product(2,"Face Cream",45.0,(R.drawable.image_creem).toString(),"Skin care cream","Skin Care",false),
-        Product(3, "Perfume Rose", 90.0,(R.drawable.image_perfum).toString(), "Rose perfume", "Perfume", false, 0.2),
+        Product(1,"Hair Dryer",120.0,(R.drawable.image_hear_care).toString(),"Professional hair dryer","5",false,0.3,40),
+        Product(2,"Face Cream",45.0,(R.drawable.image_creem).toString(),"Skin care cream","1",false,count = 20),
+        Product(3, "Perfume Rose", 90.0,(R.drawable.image_perfum).toString(), "Rose perfume", "3", false, 0.2, 70),
         Product(4,"Makeup Brush",20.0,(R.drawable.image_prush).toString(),"Soft brush","Tools",false,0.4),
-        Product(5,"Nail Polish",15.0,(R.drawable.image_nailes_color).toString(),"Red nail polish","Nails",false),
-        Product(6,"Body Lotion",40.0,(R.drawable.image_creem).toString(),"Body lotion","Body",false),
-        Product(7,"Lipstick",30.0,(R.drawable.image_lipsticks_set).toString(),"Matte lipstick","Makeup",false),
+        Product(5,"Nail Polish",15.0,(R.drawable.image_nailes_color).toString(),"Red nail polish","2",false, count = 10),
+        Product(6,"Body Lotion",40.0,(R.drawable.image_creem).toString(),"Body lotion","6",false),
+        Product(7,"Lipstick",30.0,(R.drawable.image_lipsticks_set).toString(),"Matte lipstick","4",false , count = 20),
 
     )
 
