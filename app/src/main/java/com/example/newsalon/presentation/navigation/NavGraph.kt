@@ -9,6 +9,7 @@ import com.example.newsalon.presentation.screens.category.CategoryScreen
 import com.example.newsalon.presentation.screens.cart.CartScreen
 import com.example.newsalon.presentation.screens.category.CategoryProductsScreen
 import com.example.newsalon.presentation.screens.home.HomeScreen
+import com.example.newsalon.presentation.screens.profile.ProfileScreen
 
 @Composable
 fun NavGraph(navController: NavHostController) {
@@ -29,7 +30,7 @@ fun NavGraph(navController: NavHostController) {
             HomeScreen(navController)
         }
         composable(Screen.ProfileScreen.route){
-            HomeScreen(navController)
+            ProfileScreen(navController)
         }
         composable(Screen.CategoryScreen.route){
             CategoryScreen(navController)
