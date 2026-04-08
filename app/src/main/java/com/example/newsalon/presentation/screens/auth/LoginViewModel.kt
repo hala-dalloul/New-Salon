@@ -3,6 +3,8 @@ package com.example.newsalon.presentation.screens.auth
 import androidx.compose.runtime.MutableState
 import androidx.lifecycle.ViewModel
 import com.example.newsalon.data.fakeData.FakeData
+import com.example.newsalon.data.repository.AuthRepoImp
+import com.example.newsalon.domain.repository.AuthRepo
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -32,7 +34,11 @@ class LoginViewModel: ViewModel() {
 
         // get phone number from user
         val isValidate = FakeData.users.any{it.phone == phone}
-
+        if (isValidate) {
+            var authRepoImp : AuthRepo  = AuthRepoImp()
+            authRepoImp.setCurrentUser(phone)
+            _uiState.update { it.copy(isLoginSuccess = true) }
+        }
 
         _uiState.update {
             it.copy(
