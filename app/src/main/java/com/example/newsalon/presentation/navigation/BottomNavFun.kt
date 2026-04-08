@@ -14,6 +14,7 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
@@ -42,13 +43,8 @@ fun BottomNavFun (navController: NavHostController){
                 restoreState = true
             }
         },
-        modifier = Modifier.background(Color(0xffF6F6F6))
-    )
-    Spacer(
         modifier = Modifier
-            .padding(horizontal = 16.dp, vertical = 15.dp)
-            .height(1.dp)
-            .fillMaxWidth()
-            .border(2.dp, color = Color(0xffE3E3E3), shape = RoundedCornerShape(5.dp))
+            .clip(RoundedCornerShape(topStart = 20.dp, topEnd = 8.dp))
+            .background(Color(0xffF6F6F6))
     )
 }

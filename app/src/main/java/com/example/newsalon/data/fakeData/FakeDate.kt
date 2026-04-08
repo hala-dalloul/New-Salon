@@ -1,5 +1,6 @@
 package com.example.newsalon.data.fakeData
 
+import androidx.compose.runtime.mutableStateListOf
 import com.example.newsalon.R
 import com.example.newsalon.domain.models.Banner
 import com.example.newsalon.domain.models.CartItem
@@ -57,7 +58,7 @@ object FakeData {
         Banner(6,(R.drawable.image_lipsticks_set).toString()),
     )
 
-    val cartItems = listOf(
+    val cartItems = mutableStateListOf(
 
         CartItem(products[0],1),
         CartItem(products[1],2),
