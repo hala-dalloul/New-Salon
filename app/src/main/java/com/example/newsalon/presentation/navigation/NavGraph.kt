@@ -9,6 +9,7 @@ import com.example.newsalon.presentation.screens.category.CategoryScreen
 import com.example.newsalon.presentation.screens.cart.CartScreen
 import com.example.newsalon.presentation.screens.category.CategoryProductsScreen
 import com.example.newsalon.presentation.screens.home.HomeScreen
+import com.example.newsalon.presentation.screens.productDetailes.ProductDetails
 import com.example.newsalon.presentation.screens.profile.ProfileScreen
 
 @Composable
@@ -39,6 +40,12 @@ fun NavGraph(navController: NavHostController) {
         composable("category_details_screen/{categoryId}") { backStackEntry ->
             val categoryId = backStackEntry.arguments?.getString("categoryId")
             CategoryProductsScreen(navController, categoryId)
+        }
+
+        composable("product_details_screen/{productId}") { backStackEntry ->
+            val productIdString = backStackEntry.arguments?.getString("productId")
+            val productId = productIdString?.toIntOrNull() ?: 1
+            ProductDetails(navController, productId)
         }
 
         composable(Screen.CartScreen.route){

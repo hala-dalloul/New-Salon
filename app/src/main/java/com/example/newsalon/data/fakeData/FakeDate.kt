@@ -26,7 +26,7 @@ object FakeData {
         Product(1,"Hair Dryer",120.0,(R.drawable.image_hear_care).toString(),"Professional hair dryer","5",false,0.3,40),
         Product(2,"Face Cream",45.0,(R.drawable.image_creem).toString(),"Skin care cream","1",false,count = 20),
         Product(3, "Perfume Rose", 90.0,(R.drawable.image_perfum).toString(), "Rose perfume", "3", false, 0.2, 70),
-        Product(4,"Makeup Brush",20.0,(R.drawable.image_prush).toString(),"Soft brush","Tools",false,0.4),
+        Product(4,"Makeup Brush",20.0,(R.drawable.image_prush).toString(),"Soft brush","Tools",true,0.4),
         Product(5,"Nail Polish",15.0,(R.drawable.image_nailes_color).toString(),"Red nail polish","2",false, count = 10),
         Product(6,"Body Lotion",40.0,(R.drawable.image_creem).toString(),"Body lotion","6",false),
         Product(7,"Lipstick",30.0,(R.drawable.image_lipsticks_set).toString(),"Matte lipstick","4",false , count = 20),
