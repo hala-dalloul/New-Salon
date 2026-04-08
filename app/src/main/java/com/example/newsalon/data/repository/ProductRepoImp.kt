@@ -10,8 +10,13 @@ class ProductRepoImp : ProductRepo {
     }
 
     override fun toggleFavorite(productId: Int) {
-        FakeData.products.find { it.id == productId }?.let {
-            it.isLove = !it.isLove
+        val index = FakeData.products.indexOfFirst { it.id == productId }
+        if(index != -1){
+            val currentProduct = FakeData.products[index]
+            FakeData.products[index] = currentProduct.copy(isLove = !currentProduct.isLove)
         }
+    }
+    override fun getFavoriteProducts(): List<Product> {
+        return FakeData.products.filter { it.isLove }
     }
 }
