@@ -3,6 +3,7 @@ package com.example.newsalon.presentation.screens.profile
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -43,8 +44,8 @@ import androidx.constraintlayout.compose.Dimension
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
-import com.example.newsalon.data.fakeData.FakeData
 import com.example.newsalon.presentation.navigation.BottomNavFun
+import com.example.newsalon.presentation.navigation.Screen
 import com.example.newsalon.presentation.screens.components.BeautyTopBar
 import com.example.newsalon.presentation.screens.components.EditProfileBottomSheet
 import com.example.newsalon.presentation.theme.BeautyAppTheme
@@ -70,6 +71,7 @@ fun ProfileScreen(navController: NavHostController, viewModel: ProfileViewModel 
                 initialPhone = person?.phone ?: "",
                 initialEmail = person?.email ?: "",
                 onDone = { name, phone, email ->
+                    viewModel.updateUser(name,phone,email)
                     showEditSheet = false
                 }
             )
@@ -174,7 +176,10 @@ fun ProfileScreen(navController: NavHostController, viewModel: ProfileViewModel 
 
                 Row(Modifier
                     .padding(start = 28.dp, top = 12.dp)
-                    .fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+                    .fillMaxWidth()
+                    .clickable(enabled = true, onClick = {
+                        navController.navigate(Screen.CartScreen.route)
+                    }), verticalAlignment = Alignment.CenterVertically) {
                     Icon(
                         painterResource(com.example.newsalon.R.drawable.icon_my_order),
                         contentDescription = "my order",

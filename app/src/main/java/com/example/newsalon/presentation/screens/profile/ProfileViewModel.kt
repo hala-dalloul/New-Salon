@@ -11,15 +11,24 @@ import com.example.newsalon.domain.repository.AuthRepo
 
 class ProfileViewModel(private val authRepo: AuthRepo = AuthRepoImp()) : ViewModel() {
     fun getUserPhone()=authRepo.getCurrentUserPhone()?:"No Number"
-        var userState by mutableStateOf<User?>(null)
-            private set
+    var userState by mutableStateOf<User?>(null)
+        private set
 
-        init {
+    init {
+        loadUserData()
+    }
+
+    fun loadUserData() {
+        val phone = authRepo.getCurrentUserPhone()
+        userState = FakeData.users.find { it.phone == phone }
+    }
+    fun updateUser(name: String, phone: String, email: String) {
+        val currentPhone = authRepo.getCurrentUserPhone()
+        val index = FakeData.users.indexOfFirst { it.phone == currentPhone }
+        if (index != -1) {
+            val currentUser = FakeData.users[index]
+            FakeData.users[index] = currentUser.copy(name = name, phone = phone, email = email)
             loadUserData()
         }
-
-        fun loadUserData() {
-            val phone = authRepo.getCurrentUserPhone()
-            userState = FakeData.users.find { it.phone == phone }
-        }
+    }
 }

@@ -34,7 +34,7 @@ object FakeData {
 
     )
 
-    val users = listOf(
+    val users = mutableStateListOf(
         User(1,"5991234","User1","user1@email.com","https://picsum.photos/200?21"),
         User(2,"5992345","User2","user2@email.com","https://picsum.photos/200?22"),
         User(3,"5993456","User3", "user3@email.com", "https://picsum.photos/200?23"),
