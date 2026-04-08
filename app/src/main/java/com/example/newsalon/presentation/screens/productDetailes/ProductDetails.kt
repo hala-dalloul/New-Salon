@@ -34,6 +34,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.newsalon.R
+import com.example.newsalon.presentation.navigation.Screen
 import com.example.newsalon.presentation.screens.components.BeautyTopBar
 import com.example.newsalon.presentation.theme.BeautyAppTheme
 import com.example.newsalon.presentation.theme.BeautyRed
@@ -90,6 +91,7 @@ fun ProductDetails(
                     Button(
                         onClick = {
                             viewModel.addToCart()
+                            navController.navigate(Screen.CartScreen.route)
                                   },
                         modifier = Modifier
                             .weight(1f)

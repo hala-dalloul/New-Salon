@@ -35,17 +35,17 @@ object FakeData {
     )
 
     val users = mutableStateListOf(
-        User(1,"5991234","User1","user1@email.com","https://picsum.photos/200?21"),
-        User(2,"5992345","User2","user2@email.com","https://picsum.photos/200?22"),
-        User(3,"5993456","User3", "user3@email.com", "https://picsum.photos/200?23"),
-        User(4,"5994567","User4","user4@email.com","https://picsum.photos/200?24"),
-        User(5,"5995678","User5","user5@email.com","https://picsum.photos/200?25"),
-        User(6,"5996789","User6","user6@email.com","https://picsum.photos/200?26"),
-        User(7,"5671234","User7","user7@email.com","https://picsum.photos/200?27"),
-        User(8,"5672345","User8","user8@email.com","https://picsum.photos/200?28"),
-        User(9,"5673456","User9","user9@email.com","https://picsum.photos/200?29"),
-        User(10,"5674567","User10","user10@email.com","https://picsum.photos/200?30"),
-        User(11,"5675678","User11","user11@email.com","https://picsum.photos/200?31")
+        User(1,"599123456","User1","user1@email.com","https://picsum.photos/200?21"),
+        User(2,"599234567","User2","user2@email.com","https://picsum.photos/200?22"),
+        User(3,"599345678","User3", "user3@email.com", "https://picsum.photos/200?23"),
+        User(4,"599456789","User4","user4@email.com","https://picsum.photos/200?24"),
+        User(5,"599567810","User5","user5@email.com","https://picsum.photos/200?25"),
+        User(6,"599678911","User6","user6@email.com","https://picsum.photos/200?26"),
+        User(7,"567123456","User7","user7@email.com","https://picsum.photos/200?27"),
+        User(8,"567234567","User8","user8@email.com","https://picsum.photos/200?28"),
+        User(9,"567345678","User9","user9@email.com","https://picsum.photos/200?29"),
+        User(10,"567456789","User10","user10@email.com","https://picsum.photos/200?30"),
+        User(11,"567567810","User11","user11@email.com","https://picsum.photos/200?31")
     )
 
     val banners = listOf(
