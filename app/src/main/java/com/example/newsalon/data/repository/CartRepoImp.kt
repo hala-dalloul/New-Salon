@@ -2,6 +2,7 @@ package com.example.newsalon.data.repository
 
 import com.example.newsalon.data.fakeData.FakeData
 import com.example.newsalon.domain.models.CartItem
+import com.example.newsalon.domain.models.Product
 import com.example.newsalon.domain.repository.CartRepo
 
 class CartRepoImp : CartRepo {
@@ -22,5 +23,15 @@ class CartRepoImp : CartRepo {
 
     override fun getSubTotal(): Double {
         return FakeData.cartItems.sumOf { it.product.price * it.quantity }
+    }
+
+    override fun addToCart(product: Product, quantity: Int) {
+        val index = FakeData.cartItems.indexOfFirst { it.product.id == product.id }
+        if (index != -1) {
+            val existingItem = FakeData.cartItems[index]
+            FakeData.cartItems[index] = existingItem.copy(quantity = existingItem.quantity + quantity)
+        } else {
+            FakeData.cartItems.add(CartItem(product, quantity))
+        }
     }
 }

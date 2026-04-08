@@ -88,7 +88,9 @@ fun ProductDetails(
                     }
                     Spacer(modifier = Modifier.width(16.dp))
                     Button(
-                        onClick = { /* Buy now logic */ },
+                        onClick = {
+                            viewModel.addToCart()
+                                  },
                         modifier = Modifier
                             .weight(1f)
                             .height(50.dp),
