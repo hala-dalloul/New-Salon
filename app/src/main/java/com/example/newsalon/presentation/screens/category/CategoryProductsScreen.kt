@@ -71,7 +71,7 @@ fun CategoryProductsScreen(navController: NavHostController, categoryId: String?
                         .weight(1f)
                 ) {
                     items(uiState.products) { product ->
-                        ProductCard(product)
+                        ProductCard(product, navController)
                     }
                 }
             }
