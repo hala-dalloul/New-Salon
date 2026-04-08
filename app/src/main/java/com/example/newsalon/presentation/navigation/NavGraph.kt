@@ -8,6 +8,7 @@ import com.example.newsalon.presentation.screens.auth.LoginScreen
 import com.example.newsalon.presentation.screens.category.CategoryScreen
 import com.example.newsalon.presentation.screens.cart.CartScreen
 import com.example.newsalon.presentation.screens.category.CategoryProductsScreen
+import com.example.newsalon.presentation.screens.favorite.FavoriteScreen
 import com.example.newsalon.presentation.screens.home.HomeScreen
 import com.example.newsalon.presentation.screens.productDetailes.ProductDetails
 import com.example.newsalon.presentation.screens.profile.ProfileScreen
@@ -52,7 +53,7 @@ fun NavGraph(navController: NavHostController) {
             CartScreen(navController)
         }
         composable(Screen.FavoriteScreen.route){
-            HomeScreen(navController)
+            FavoriteScreen(navController)
         }
 
     }

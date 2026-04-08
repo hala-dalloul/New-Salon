@@ -14,4 +14,7 @@ class ProductRepoImp : ProductRepo {
             it.isLove = !it.isLove
         }
     }
+    override fun getFavoriteProducts(): List<Product> {
+        return FakeData.products.filter { it.isLove }
+    }
 }
