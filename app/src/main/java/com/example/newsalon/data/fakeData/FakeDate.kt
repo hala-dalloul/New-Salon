@@ -22,7 +22,7 @@ object FakeData {
 
     )
 
-    val products = listOf(
+    val products = mutableStateListOf(
 
         Product(1,"Hair Dryer",120.0,(R.drawable.image_hear_care).toString(),"Professional hair dryer","5",false,0.3,40),
         Product(2,"Face Cream",45.0,(R.drawable.image_creem).toString(),"Skin care cream","1",false,count = 20),
